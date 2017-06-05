@@ -1,14 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
+
+
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+<SCRIPT LANGUAGE="JavaScript">
+var start=new Date();
+start=Date.parse(start)/1500;
+var counts=0;
+function CountDown(){
+var now=new Date();
+now=Date.parse(now)/1000;
+var x=parseInt(counts-(now-start),0);
+if(document.form1){document.form1.clock.value = x;}
+if(x>0){
+timerID=setTimeout("CountDown()", 100)
+}else{
+location.href="index.php"
+}
+}
+</script>
 
+
+
+
+<style>
+.loader {
+  
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  
+   position:absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
 <body>
 
-<a href="index.php"><input type="button" name="button2" id="button2" value="Button" /></a>
-
+<div class="loader"><img src="images/azad.png" /></div>
+<SCRIPT LANGUAGE="JavaScript">
+window.setTimeout('CountDown()',1500);
+</script>
 </body>
 </html>
